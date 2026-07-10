@@ -2,19 +2,14 @@ const KROWD_KEY = 'krwd_8ae6db996eae452c113564c7fac871b7ba9552dfa3ac79459a6f32ec
   const COMPANY_ID = 1125;
   const BEER_URL = `https://api.getkrowd.com/v3/beer/index.cfm?companyId=${COMPANY_ID}&apiKey=${encodeURIComponent(KROWD_KEY)}`;
   const EVENTS_URL = `https://api.getkrowd.com/v3/events/index.cfm?companyId=${COMPANY_ID}&apiKey=${encodeURIComponent(KROWD_KEY)}`;
-
   document.getElementById('year').textContent = new Date().getFullYear();
-
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); }));
-
   document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); } }); });
-
   const nav = document.querySelector('nav');
   window.addEventListener('scroll', () => { nav.style.background = window.scrollY > 60 ? 'rgba(7,23,34,0.98)' : 'rgba(7,23,34,0.92)'; }, { passive: true });
-
   const heroSlides = document.getElementById('heroSlides');
   const heroDots = document.getElementById('heroDots');
   const heroCount = heroSlides.children.length;
@@ -26,9 +21,7 @@ const KROWD_KEY = 'krwd_8ae6db996eae452c113564c7fac871b7ba9552dfa3ac79459a6f32ec
   let hTX=0;
   heroSlides.addEventListener('touchstart', e => hTX=e.touches[0].clientX, {passive:true});
   heroSlides.addEventListener('touchend', e => { const d=hTX-e.changedTouches[0].clientX; if(Math.abs(d)>50){ d>0?heroGo(heroIdx+1):heroGo(heroIdx-1); heroReset(); } });
-
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
   (async function loadBeers(){
     const box = document.getElementById('tapContainer');
     try {
@@ -50,14 +43,13 @@ const KROWD_KEY = 'krwd_8ae6db996eae452c113564c7fac871b7ba9552dfa3ac79459a6f32ec
               const guest = b.brewery_name && b.brewery_name !== 'Unrefined Brewing' ? `<span class="guest">Guest · ${esc(b.brewery_name)}</span>` : '';
               const abv = b.show_abv !== false && b.abv ? `<span class="abv">${esc(b.abv)} ABV</span>` : '';
               const style = b.beer_type ? `<span>${esc(b.beer_type)}</span>` : '';
-              const serve = b.description ? `<span>${esc(b.description)}</span>` : '';
+              const serve = b.description ? `<span>${esc(b.description).replace(/&amp;middot;|&amp;#183;|&amp;#xB7;/gi,'·')}</span>` : '';
               return `<div class="tap-item"><div><div class="tap-item-name">${esc(b.title)}</div><div class="tap-item-meta">${abv}${style}${serve}${guest}</div></div>${b.price?`<div class="tap-item-price">${esc(b.price)}</div>`:''}</div>`;
             }).join('')}
           </div>
         </div>`).join('');
     } catch(e) { box.innerHTML = '<div class="tap-state">Couldn\'t load the tap list right now — please refresh, or come see us. It\'s better in person anyway.</div>'; }
   })();
-
   (async function loadEvents(){
     const box = document.getElementById('eventsContainer');
     const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -80,3 +72,22 @@ const KROWD_KEY = 'krwd_8ae6db996eae452c113564c7fac871b7ba9552dfa3ac79459a6f32ec
       }).join('') + '</div>';
     } catch(e) { box.innerHTML = empty; }
   })();
+
+(function(){
+  var btn=document.getElementById('ub-btn'), panel=document.getElementById('ub-panel'),
+      teaser=document.getElementById('ub-teaser'), x=document.getElementById('ub-teaser-x'),
+      iframe=document.getElementById('ub-iframe'), closed=false;
+  setTimeout(function(){ if(!closed && !panel.classList.contains('open')) teaser.classList.add('show'); }, 2000);
+  x.addEventListener('click', function(e){ e.stopPropagation(); teaser.classList.remove('show'); closed=true; });
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    if(panel.classList.contains('open')){ panel.classList.remove('open'); }
+    else {
+      panel.classList.add('open'); teaser.classList.remove('show'); closed=true;
+      if(!iframe.src) iframe.src='https://paymegpt.com/agents/46866772/embed';
+    }
+  });
+  document.addEventListener('click', function(ev){
+    if(panel.classList.contains('open') && !panel.contains(ev.target) && !btn.contains(ev.target)) panel.classList.remove('open');
+  });
+})();
