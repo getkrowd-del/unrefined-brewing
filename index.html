@@ -13,8 +13,7 @@
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
 
 
 <!-- SEO Meta Tags -->
@@ -312,153 +311,134 @@
 </head>
 <body>
 
-<nav data-section="nav">
-  <a href="#top" class="nav-logo"><span class="mark"><span>U</span></span> Unrefined Brewing</a>
-  <ul class="nav-links">
-    <li><a href="#tap">Tap List</a></li>
-    <li><a href="#story">Story</a></li>
-    <li><a href="#events">Events</a></li>
-    <li><a href="#visit">Visit</a></li>
-  </ul>
-  <div class="nav-right-desktop"><a href="#tap" class="nav-cta">What's Pouring</a></div>
-  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
-</nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#tap">Tap List</a>
-  <a href="#story">Story</a>
-  <a href="#events">Events</a>
-  <a href="#visit">Visit</a>
-  <a href="#tap" class="mob-cta">What's Pouring</a>
+  <a href="#tap">🍺 Tap List</a>
+  <a href="#story">Our Story</a>
+  <a href="#experience">The Taproom</a>
+  <a href="#events">🎸 Events</a>
+  <a href="#visit">📍 Visit</a>
+  <a href="#visit" class="order-mobile">Plan Your Visit</a>
 </div>
 
-<header class="hero" id="top" data-section="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-noise"></div>
-  <div class="hero-inner">
-    <span class="hero-tag">Small-batch · Dunedin, Florida</span>
-    <h1>Beer with<br><span class="line2">no</span> <span class="acidword">chill.</span></h1>
-    <p>Boutique <strong>sweet stouts</strong>, <strong>kettle sours</strong>, and one-off oddities brewed with real fruit and zero shortcuts. Named like a group chat, poured like it matters.</p>
+<nav data-section="nav">
+  <a href="#top" class="nav-logo">
+    <img class="badge-img" src="https://static.wixstatic.com/media/bb19e3_da27f40802a346b7a3a12feb36b1f116~mv2.png/v1/fill/w_200,h_152,al_c,q_85,enc_auto/UnrefinedBrewing-SolidFL-B.png" alt="Unrefined Brewing logo">
+    <span class="wordmark">Unrefined<span>Brewing · Dunedin</span></span>
+  </a>
+  <div class="nav-center">
+    <ul class="nav-links">
+      <li><a href="#tap">Tap List</a></li>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#experience">Taproom</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </div>
+  <div class="nav-right"><a href="#tap" class="nav-cta">What's on Tap</a></div>
+  <div class="nav-hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="hero" id="top" data-section="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1600&q=80" alt="Dark stout being poured at the taproom bar"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1518099074172-2e47ee6cfdc0?w=1600&q=80" alt="Fresh beer pour"><div class="hero-slide-overlay"></div></div>
+    <div class="hero-slide"><img src="https://images.unsplash.com/photo-1600788907416-456578634209?w=1600&q=80" alt="Brewery fermentation tanks"><div class="hero-slide-overlay"></div></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Craft Brewery & Taproom</div>
+    <h1>Small-Batch Beer,<br><em>Brewed Unrefined.</em></h1>
+    <p>Sweet stouts, kettle sours, and barrel-aged oddities made with real ingredients and zero shortcuts — poured fresh in downtown Dunedin.</p>
     <div class="hero-buttons">
-      <a href="#tap" class="btn btn-primary">See What's on Tap</a>
-      <a href="#visit" class="btn btn-ghost">Find the Taproom</a>
+      <a href="#tap" class="btn-primary">See What's on Tap</a>
+      <a href="#visit" class="btn-outline">Plan Your Visit</a>
     </div>
   </div>
-  <div class="hero-marquee" aria-hidden="true">
-    <div class="marquee-track" id="marquee">
-      <span><b>◆</b> Sweet Stouts <b>◆</b> Kettle Sours <b>◆</b> Barrel-Aged Everything <b>◆</b> Rotating Guest Taps <b>◆</b> Natural Ingredients Only <b>◆</b> Small Batch, Big Ideas&nbsp;</span>
-      <span><b>◆</b> Sweet Stouts <b>◆</b> Kettle Sours <b>◆</b> Barrel-Aged Everything <b>◆</b> Rotating Guest Taps <b>◆</b> Natural Ingredients Only <b>◆</b> Small Batch, Big Ideas&nbsp;</span>
-    </div>
-  </div>
-</header>
+  <div class="hero-dots" id="heroDots"></div>
+</div>
 
 <section class="taplist" id="tap" data-section="taplist">
-  <div class="wrap">
+  <div class="taplist-inner">
     <div class="tap-head">
       <div>
-        <div class="eyebrow" data-num="01 —">On Tap Right Now</div>
+        <div class="section-label">On Tap Now</div>
         <h2>What's Pouring</h2>
       </div>
-      <div class="tap-live"><span class="dot"></span> Live tap list</div>
+      <div class="tap-live"><span class="dot"></span> Live Tap List</div>
     </div>
-    <div id="tapContainer">
-      <div class="tap-state">Pouring a fresh list…</div>
-    </div>
+    <div id="tapContainer"><div class="tap-state">Pouring a fresh list…</div></div>
     <p class="tap-foot" id="tapFoot"></p>
   </div>
 </section>
 
 <section class="story" id="story" data-section="story">
-  <div class="wrap story-grid">
-    <div>
-      <div class="eyebrow" data-num="02 —">Why We're Like This</div>
-      <div class="story-quote">Some breweries chase <em>consistency.</em><br>We chase the <em>good stuff.</em></div>
+  <div class="story-inner">
+    <div class="story-images">
+      <div class="story-img-main"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Brewing tanks" loading="lazy"></div>
+      <div class="story-img-accent"><img src="https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&q=80" alt="Fresh fruit for brewing" loading="lazy"></div>
     </div>
-    <div class="story-body">
-      <p>We treat brewing like cooking with a very long wait — weeks of it — until you finally taste what you set out to make. Every batch starts with the best ingredients we can get our hands on.</p>
-      <p>We don't cut corners with extracts. Real fruit, real chocolate, real everything — so nothing tastes <strong>"chemically"</strong> or just off. The trade-off is that seasons and each crate of fruit nudge every batch somewhere slightly new. <strong>We think that's the point.</strong></p>
+    <div>
+      <div class="section-label">Our Story</div>
+      <h2>Some Chase Consistency.<br>We Chase the Good Stuff.</h2>
+      <p class="lead">We treat brewing like cooking with a very long wait — weeks of it — until you finally taste what you set out to make. Every batch starts with the best ingredients we can get our hands on.</p>
+      <p class="lead" style="margin-top:1.2rem;">No extracts, no shortcuts — real fruit, real chocolate, real everything. Seasons nudge each batch somewhere slightly new, and we think that's exactly the point.</p>
       <div class="story-stats">
-        <div class="stat"><div class="stat-n" id="statTaps">18</div><div class="stat-l">On tap now</div></div>
-        <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Natural ingredients</div></div>
-        <div class="stat"><div class="stat-n">Small</div><div class="stat-l">Batch by design</div></div>
-        <div class="stat"><div class="stat-n">∞</div><div class="stat-l">One-off oddities</div></div>
+        <div class="stat"><div class="stat-number" id="statTaps">18</div><div class="stat-label">On Tap Now</div></div>
+        <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Natural Ingredients</div></div>
+        <div class="stat"><div class="stat-number">Small</div><div class="stat-label">Batch by Design</div></div>
+        <div class="stat"><div class="stat-number">Local</div><div class="stat-label">Dunedin, Florida</div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="experience" id="experience" data-section="experience">
+  <div class="experience-grid">
+    <div class="exp-panel"><div class="exp-panel-bg"><img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=900&q=80" alt="Taproom" loading="lazy"></div><div class="exp-panel-overlay"></div><div class="exp-content"><div class="exp-icon">🍺</div><div class="exp-title">The Taproom</div><div class="exp-desc">Pull up a stool for rotating small-batch pours you won't find anywhere else.</div></div></div>
+    <div class="exp-panel"><div class="exp-panel-bg"><img src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?w=900&q=80" alt="Barrel program" loading="lazy"></div><div class="exp-panel-overlay"></div><div class="exp-content"><div class="exp-icon">🛢️</div><div class="exp-title">Barrel-Aged</div><div class="exp-desc">Bourbon, rye, and whiskey-barrel stouts aged slow for big, layered flavor.</div></div></div>
+    <div class="exp-panel"><div class="exp-panel-bg"><img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=900&q=80" alt="Guest taps and events" loading="lazy"></div><div class="exp-panel-overlay"></div><div class="exp-content"><div class="exp-icon">🎸</div><div class="exp-title">Taps & Takeovers</div><div class="exp-desc">Rotating guest taps and events with friends from the Florida beer scene.</div></div></div>
   </div>
 </section>
 
 <section class="events" id="events" data-section="events">
-  <div class="wrap">
-    <div class="eyebrow" data-num="03 —">On the Calendar</div>
-    <h2>Events</h2>
-    <div id="eventsContainer" style="margin-top:2.4rem;">
-      <div class="tap-state">Checking the calendar…</div>
-    </div>
+  <div class="events-inner">
+    <div class="section-label">On the Calendar</div>
+    <h2>Events at Unrefined</h2>
+    <div id="eventsContainer"><div class="tap-state">Checking the calendar…</div></div>
   </div>
 </section>
 
 <section class="visit" id="visit" data-section="visit">
-  <div class="wrap visit-grid">
+  <div class="visit-inner">
     <div>
-      <div class="eyebrow" data-num="04 —">Come Drink With Us</div>
-      <h2>Visit the Taproom</h2>
-      <p class="lead" style="margin-bottom:2rem;">We're in Dunedin now. Pull up, grab a pour, stay a while.</p>
-      <div class="info-row">
-        <div class="info-k">Where</div>
-        <div class="info-v">Downtown Dunedin, FL<br><span class="placeholder">[ Confirm street address ]</span></div>
+      <div class="section-label">Plan Your Visit</div>
+      <h2>Find Us in<br>Downtown Dunedin.</h2>
+      <div class="info-block">
+        <div class="info-row"><div class="info-icon">📍</div><div><div class="info-label">Location</div><div class="info-value">Downtown Dunedin, FL<br><span class="todo">[ Confirm street address ]</span></div></div></div>
+        <div class="info-row"><div class="info-icon">📞</div><div><div class="info-label">Phone</div><div class="info-value"><span class="todo">[ Confirm phone number ]</span></div></div></div>
+        <div class="info-row"><div class="info-icon">🕐</div><div><div class="info-label">Hours</div><div class="hours-grid">
+          <div class="hours-row"><strong>Thu – Fri</strong><span>4pm – 10pm</span></div>
+          <div class="hours-row"><strong>Saturday</strong><span>1pm – 10pm</span></div>
+          <div class="hours-row"><strong>Sunday</strong><span>1pm – 8pm</span></div>
+          <div class="hours-row"><strong>Mon – Wed</strong><span>Closed</span></div>
+        </div></div></div>
       </div>
-      <div class="info-row">
-        <div class="info-k">Phone</div>
-        <div class="info-v"><span class="placeholder">[ Confirm phone number ]</span></div>
-      </div>
-      <div class="info-row">
-        <div class="info-k">Hours</div>
-        <div class="info-v" style="width:100%;">
-          <div class="hours-line"><span>Thu – Fri</span><span>4pm – 10pm</span></div>
-          <div class="hours-line"><span>Saturday</span><span>1pm – 10pm</span></div>
-          <div class="hours-line"><span>Sunday</span><span>1pm – 8pm</span></div>
-          <div class="hours-line"><span>Mon – Wed</span><span>Closed</span></div>
-        </div>
-      </div>
+      <div class="cta-bar"><p>Come taste something<br>you can't get anywhere else.</p><a href="#tap">See the Tap List</a></div>
     </div>
-    <div class="visit-map">
-      <iframe title="Map of Downtown Dunedin, Florida" src="https://www.google.com/maps?q=Downtown+Dunedin+FL&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <div class="visit-map"><iframe title="Map of Downtown Dunedin, Florida" src="https://www.google.com/maps?q=Downtown+Dunedin+FL&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   </div>
 </section>
 
 <footer data-section="footer">
-  <div class="foot-grid">
-    <div class="foot-brand">
-      <h3>Unrefined Brewing</h3>
-      <p>Small-batch sweet stouts, kettle sours, and one-off oddities. Poured fresh in Dunedin, Florida. Drink weird, drink local.</p>
-      <div class="foot-social">
-        <a href="https://www.facebook.com/unrefinedbrewing" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-        <a href="#" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-        <a href="#" target="_blank" rel="noopener" aria-label="Untappd">UT</a>
-      </div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img class="footer-logo" src="https://static.wixstatic.com/media/bb19e3_da27f40802a346b7a3a12feb36b1f116~mv2.png/v1/fill/w_260,h_197,al_c,q_85,enc_auto/UnrefinedBrewing-SolidFL-B.png" alt="Unrefined Brewing logo">
+      <p>Small-batch sweet stouts, kettle sours, and barrel-aged ales brewed with natural ingredients in Dunedin, Florida.</p>
+      <div class="footer-socials"><a class="social-btn" href="https://www.facebook.com/unrefinedbrewing" target="_blank" rel="noopener" aria-label="Facebook">f</a><a class="social-btn" href="https://www.instagram.com/unrefinedbrewer/" target="_blank" rel="noopener" aria-label="Instagram">📸</a><a class="social-btn" href="https://untappd.com/v/unrefined-brewing/8909997" target="_blank" rel="noopener" aria-label="Untappd">🍺</a></div>
     </div>
-    <div class="foot-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#tap">Tap List</a></li>
-        <li><a href="#story">Our Story</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#visit">Visit</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h4>Visit</h4>
-      <ul>
-        <li><a href="#visit">Dunedin, FL</a></li>
-        <li><a href="#visit">Thu–Sun</a></li>
-        <li><a href="#visit">Hours & Map</a></li>
-      </ul>
-    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="#tap">Tap List</a></li><li><a href="#story">Our Story</a></li><li><a href="#experience">The Taproom</a></li><li><a href="#events">Events</a></li><li><a href="#visit">Visit</a></li></ul></div>
+    <div class="footer-col"><h4>Visit</h4><ul><li><a href="#visit">Dunedin, FL</a></li><li><a href="#visit">Thu–Fri: 4–10pm</a></li><li><a href="#visit">Sat: 1–10pm</a></li><li><a href="#visit">Sun: 1–8pm</a></li></ul></div>
   </div>
-  <div class="foot-bottom">
-    <span>© <span id="year"></span> Unrefined Brewing · Drink responsibly · 21+</span>
-    <span>Brewed unrefined in Dunedin 🍺</span>
-  </div>
+  <div class="footer-bottom"><p>© <span id="year"></span> Unrefined Brewing. All rights reserved. Drink responsibly. Must be 21+.</p><p>Brewed unrefined in Dunedin 🍺</p></div>
 </footer>
 
 
