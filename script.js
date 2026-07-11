@@ -35,6 +35,7 @@ const KROWD_KEY = 'krwd_8ae6db996eae452c113564c7fac871b7ba9552dfa3ac79459a6f32ec
       const groups = []; const idx = {};
       beers.forEach(b => { const key = b.category_name || b.beer_type || 'On Tap'; if(!(key in idx)){ idx[key]=groups.length; groups.push({name:key, order:b.category_order!=null?b.category_order:99, items:[]}); } groups[idx[key]].items.push(b); });
       groups.sort((a,b)=>a.order-b.order);
+      const dot = t => esc(t).replace(/&amp;middot;|&amp;#183;|&amp;#xb7;/gi,'·');
       box.innerHTML = groups.map(g => `
         <div class="tap-cat">
           <div class="tap-cat-name">${esc(g.name)} <span class="count">${g.items.length} pour${g.items.length>1?'s':''}</span></div>
@@ -43,8 +44,8 @@ const KROWD_KEY = 'krwd_8ae6db996eae452c113564c7fac871b7ba9552dfa3ac79459a6f32ec
               const guest = b.brewery_name && b.brewery_name !== 'Unrefined Brewing' ? `<span class="guest">Guest · ${esc(b.brewery_name)}</span>` : '';
               const abv = b.show_abv !== false && b.abv ? `<span class="abv">${esc(b.abv)} ABV</span>` : '';
               const style = b.beer_type ? `<span>${esc(b.beer_type)}</span>` : '';
-              const serve = b.description ? `<span>${esc(b.description).replace(/&amp;middot;|&amp;#183;|&amp;#xB7;/gi,'·')}</span>` : '';
-              return `<div class="tap-item"><div><div class="tap-item-name">${esc(b.title)}</div><div class="tap-item-meta">${abv}${style}${serve}${guest}</div></div>${b.price?`<div class="tap-item-price">${esc(b.price)}</div>`:''}</div>`;
+              const serve = b.description ? `<span>${dot(b.description)}</span>` : '';
+              return `<div class="tap-item"><div><div class="tap-item-name">${esc(b.title)}</div><div class="tap-item-meta">${abv}${style}${serve}${guest}</div></div>${b.price?`<div class="tap-item-price">${dot(b.price)}</div>`:''}</div>`;
             }).join('')}
           </div>
         </div>`).join('');
