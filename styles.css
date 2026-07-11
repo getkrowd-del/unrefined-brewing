@@ -113,7 +113,6 @@
   .info-icon { font-size: 1.4rem; margin-top: 2px; flex-shrink: 0; }
   .info-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--blue); margin-bottom: 4px; }
   .info-value { color: var(--cream); font-size: 0.95rem; line-height: 1.6; }
-  .info-value .todo { color: var(--blue-light); font-family: 'Oswald', sans-serif; font-size: 0.82rem; letter-spacing: 1px; }
   .hours-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 8px; max-width: 320px; }
   .hours-row { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 7px 0; border-bottom: 1px solid rgba(28,163,214,0.1); color: var(--text); }
   .hours-row strong { color: var(--cream); }
@@ -139,7 +138,7 @@
   .footer-bottom p { font-size: 0.8rem; color: rgba(169,196,212,0.5); }
   @media(max-width:820px) {
     .club > div { grid-template-columns: 1fr !important; text-align: center; justify-items: center; gap: 20px !important; }
-    .club img { width: 130px !important; height: 130px !important; }
+    .club img { width: 120px !important; height: 120px !important; }
     .club .section-label { justify-content: center; }
     .club p { margin: 0 auto; }
   }
