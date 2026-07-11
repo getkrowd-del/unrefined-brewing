@@ -85,7 +85,7 @@ const KROWD_KEY = 'krwd_8ae6db996eae452c113564c7fac871b7ba9552dfa3ac79459a6f32ec
     if(panel.classList.contains('open')){ panel.classList.remove('open'); }
     else {
       panel.classList.add('open'); teaser.classList.remove('show'); closed=true;
-      if(!iframe.src) iframe.src='https://paymegpt.com/agents/46866772/embed';
+      if(!iframe.src) iframe.src='https://paymegpt.com/agents/89586862/embed';
     }
   });
   document.addEventListener('click', function(ev){
